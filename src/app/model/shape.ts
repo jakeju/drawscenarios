@@ -3,4 +3,7 @@ export class Shape {
     constructor(shapeType = 'Shape') {
         this.shapeType = shapeType;
       }
+    protected getDimension() {
+
+    }
 }

@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, Input } from '@angular/core';
 import * as D3 from 'd3/index';
-import { read } from 'fs';
+
 
 @Component({
   selector: 'app-draw-d3',

@@ -22,6 +22,10 @@ export class HeaderMatrixComponent implements OnInit {
 
   ngOnInit() {
   }
+  addLine() {
+    const tmp = new HeaderBox();
+
+  }
   addHeaderBox(ID= 0, name: string, display: string, icon: string) {
     // tslint:disable-next-line: no-var-keyword
     // tslint:disable-next-line: prefer-const

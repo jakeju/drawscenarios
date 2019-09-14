@@ -1,32 +1,60 @@
 <p> Top Header Matrix</p>
-<table> 
-    <tr>
-        <td> Dimension</td>
-        <td> X/Width</td>
-        <td> Y/Height</td>
-    </tr>
-    <tr>
-        <td>Top Box X Interval</td>
-        <td><input type="number" [(ngModel)]=headerMatrixModel.topBoxIntervalX/></td>
-        <td> </td>
-    </tr>
-    <tr>
-        <td>Box Start Point</td>
-        <td><input type="number" [(ngModel)]=headerMatrixModel.topBoxStartPoint.x></td>
-        <td><input type="number"  [(ngModel)]=headerMatrixModel.topBoxStartPoint.y></td>
-    </tr>
-    <tr>
-            <td>Box size </td>
-            <td><input type="number" name="box-size-w" id="box-size-w" [(ngModel)]=headerMatrixModel.topBoxSize.x></td>
-            <td><input type="number" name="box-size-h" id="box-size-g" [(ngModel)]=headerMatrixModel.topBoxSize.y></td>
+<table border="1"> 
+    <thead>
+        <tr>
+            <th> Dimension</th>
+            <th> X/Width</th>
+            <th> Y/Height</th>
         </tr>
-    
+    </thead>
+    <tbody>
+        <tr>
+            <td>Top Box X Interval</td>
+            <td><input type="number" [(ngModel)]=headerMatrixModel.topBoxIntervalX/></td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>Box Start Point</td>
+            <td><input type="number" [(ngModel)]=headerMatrixModel.topBoxStartPoint.x></td>
+            <td><input type="number"  [(ngModel)]=headerMatrixModel.topBoxStartPoint.y></td>
+        </tr>
+        <tr>
+            <td>Box size </td>
+            <td><input type="number"  [(ngModel)]=headerMatrixModel.topBoxSize.x></td>
+            <td><input type="number"  [(ngModel)]=headerMatrixModel.topBoxSize.y></td>
+        </tr>
+    </tbody>
 </table>
 <br>
 <hr>
-<div *ngFor="let box of headerBoxList">
-    {{box.ID}} {{box.name}} {{box.display}} {{box.icon}} {{box.precedingPaddingX}}
-</div>
+<table border="1">
+    <thead>
+        <tr> 
+            <th>ID</th>
+            <th>Name</th>
+            <th>Display Name</th>
+            <th>Icon</th>
+            <th>precedingPaddingX</th>
+            <th>Operation</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let box of headerBoxList">
+            <td>{{box.ID}}</td>
+            <td>{{box.name}}</td>
+            <td>{{box.display}}</td>
+            <td>{{box.icon}}</td>
+            <td> {{box.precedingPaddingX}}</td>
+            <td>
+                <button (onclick)= addline()> + </button>
+                <span> - </span>
+            </td>
+
+        </tr>
+    </tbody>
+
+</table>
 headerMatrixModel.topBoxIntervalX value {{headerMatrixModel.topBoxIntervalX}}
 <hr>
 <app-draw-d3 [headerBoxs]=headerBoxList></app-draw-d3>
