@@ -2,8 +2,8 @@ import {Point} from '../../model/point';
 
 export class HeaderMatrixModel {
     topBoxIntervalX = 80;
-    topBoxStartPoint: Point = {x: 30, y: 40};
-    topBoxSize: Point = {x: 65, y: 20};
+    topBoxStartPoint: Point = new Point(30, 40);
+    topBoxSize: Point = new Point(65, 20);
     topBoxPosition = 0.5;
     topBoxLineLength = 200;
 }
